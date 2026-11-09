@@ -1,49 +1,54 @@
 /**
- * favi-survey-endpoint
+ * favi-survey-endpoint (verze 2 – odpovědi po sloupcích)
  * Přijímá odpovědi z dotazníku Partner dashboard (favionline.com)
  * a zapisuje je do listu "Odpovedi" v nadřazené Google tabulce.
  *
  * Dotazník posílá POST s JSON tělem (Content-Type: text/plain):
- * { lang, answers, text, hp }
+ * { lang, answers, text, columns, hp }
  *   lang    – jazyk dotazníku (cz / sk / en)
- *   answers – všechny odpovědi jako objekt (S.a z dotazníku)
+ *   answers – všechny odpovědi jako objekt (surová data)
  *   text    – čitelný textový přepis odpovědí
- *   hp      – honeypot (skryté pole); když je vyplněné, jde o robota
+ *   columns – [{ label, value }] – jedna položka = jeden sloupec (česky,
+ *             hodnocení jako "😍 5 – Velmi spokojený")
+ *   hp      – honeypot (rezerva, dotazník ho zatím neposílá vyplněný)
+ *
+ * Sloupce se párují podle názvu v řádku 1. Když přijde otázka, která v
+ * záhlaví ještě není, přidá se nový sloupec na konec.
  */
 
 var SHEET_NAME = 'Odpovedi';
 var MAX_CELL = 49000; // limit buňky v Google Sheets je 50 000 znaků
 
-var HEADERS = [
-  'Datum', 'Jazyk', 'Jméno', 'E-shop', 'E-mail', 'Telefon',
-  'Hovor', 'Souhlas s kontaktem', 'Odpovědi (text)', 'Data (JSON)'
-];
-
 function doPost(e) {
   try {
     var data = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-
-    // Robot vyplnil skryté pole → tiše ignorovat
     if (data.hp) return json_({ ok: true });
 
-    var a = data.answers || {};
-    var row = [
-      new Date(),
-      String(data.lang || '').toUpperCase(),
-      a.name || '',
-      a.shop || '',
-      a.cemail || '',
-      a.cphone || '',
-      a.callChoice === 'yes' ? 'ano' : (a.callChoice === 'no' ? 'ne' : ''),
-      a.cconsent ? 'ano' : '',
-      data.text || '',
-      JSON.stringify(a)
-    ].map(clean_);
+    var fields = [['Datum', new Date()], ['Jazyk', String(data.lang || '').toUpperCase()]];
+    (data.columns || []).forEach(function (c) {
+      if (c && c.label) fields.push([String(c.label), c.value]);
+    });
+    fields.push(['Odpovědi (text)', data.text || '']);
+    fields.push(['Data (JSON)', JSON.stringify(data.answers || {})]);
 
     var lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
       var sheet = getSheet_();
+      var lastCol = sheet.getLastColumn();
+      var header = lastCol ? sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(String) : [];
+      var startLen = header.length;
+
+      fields.forEach(function (f) {
+        if (header.indexOf(f[0]) === -1) header.push(f[0]);
+      });
+      if (header.length !== startLen) {
+        sheet.getRange(1, 1, 1, header.length).setValues([header]).setFontWeight('bold');
+        sheet.setFrozenRows(1);
+      }
+
+      var row = header.map(function () { return ''; });
+      fields.forEach(function (f) { row[header.indexOf(f[0])] = clean_(f[1]); });
       sheet.appendRow(row);
     } finally {
       lock.releaseLock();
@@ -58,24 +63,18 @@ function doPost(e) {
 
 // Otevření URL v prohlížeči jen ověří, že endpoint běží
 function doGet() {
-  return json_({ ok: true, service: 'favi-survey-endpoint' });
+  return json_({ ok: true, service: 'favi-survey-endpoint', version: 2 });
 }
 
 function getSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(HEADERS);
-    sheet.setFrozenRows(1);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
-  }
-  return sheet;
+  return ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
 }
 
 // Ochrana proti vložení vzorce (=, +, -, @) a příliš dlouhému textu
 function clean_(v) {
   if (v instanceof Date) return v;
-  var s = String(v);
+  var s = v == null ? '' : String(v);
   if (s.length > MAX_CELL) s = s.slice(0, MAX_CELL) + ' …[zkráceno]';
   if (/^[=+\-@]/.test(s)) s = "'" + s;
   return s;
@@ -94,12 +93,15 @@ function testZapis() {
     postData: {
       contents: JSON.stringify({
         lang: 'cz',
-        answers: { name: 'TEST Lukáš', shop: 'test-shop.cz', cemail: 'test@example.com', callChoice: 'no' },
+        answers: { name: 'TEST Lukáš' },
         text: 'Testovací odpověď – smazat',
+        columns: [
+          { label: 'Jméno a příjmení', value: 'TEST Lukáš' },
+          { label: 'Jaká je vaše celková spokojenost s novým dashboardem?', value: '😍 5 – Velmi spokojený' }
+        ],
         hp: ''
       })
     }
   };
-  var res = doPost(fake);
-  console.log(res.getContent());
+  console.log(doPost(fake).getContent());
 }

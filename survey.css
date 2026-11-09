@@ -443,3 +443,4 @@ html, .favi-survey, .favi-survey body > div, .favi-survey .sc-host{ height:auto 
 .favi-survey *, .favi-survey *::before, .favi-survey *::after{ box-sizing:border-box; }
 .favi-survey h1, .favi-survey h2, .favi-survey h3{ font-family:var(--font); }
 .favi-survey button, .favi-survey input, .favi-survey textarea{ font-family:inherit; }
+.favi-survey h1, .favi-survey h2, .favi-survey h3, .favi-survey h4{ color:inherit; }

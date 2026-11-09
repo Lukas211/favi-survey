@@ -54,6 +54,7 @@ window.FaviSurveySubmit = function (payload) {
     lang: payload.lang,
     answers: payload.answers,
     text: payload.text,
+    columns: payload.columns || [],
     hp: ""
   });
   sendWithRetry(body, 3).catch(function () {
@@ -796,11 +797,62 @@ function buildExport() {
   return lines.join("\n");
 }
 
+
+/* ---------- odpovědi po sloupcích (pro Google Sheet) ---------- */
+// Názvy sloupců i hodnoty vždy česky (jednotné sloupce bez ohledu na jazyk respondenta).
+var COL_FACE = { 1:"\uD83D\uDE21", 2:"\uD83D\uDE41", 3:"\uD83D\uDE10", 4:"\uD83D\uDE42", 5:"\uD83D\uDE0D" }; // 😡 🙁 😐 🙂 😍
+var COL_USAGE = { 1:"\uD83D\uDE22", 5:"\uD83D\uDE04" };                                                       // 😢 😄
+var COL_IDK = "\uD83E\uDD14";                                                                                  // 🤔
+function colRating(v, levels, set) {
+  if (v === undefined || v === null || v === "") return "";
+  var n = +v, e = (set === "usage" && COL_USAGE[n]) || COL_FACE[n] || "";
+  var lbl = levels && levels[n - 1] ? " – " + T(levels[n - 1]) : "";
+  return (e ? e + " " : "") + n + lbl;
+}
+function buildColumns() {
+  var keep = S.lang, out = [], seen = {};
+  function add(label, value) {
+    var l = label, k = 2;
+    while (seen[l]) l = label + " (" + (k++) + ")";
+    seen[l] = 1; out.push({ label:l, value:value == null ? "" : String(value) });
+  }
+  function join(head, row) { return /…$/.test(head) ? head + " " + row : head + " – " + row; }
+  S.lang = "cz";
+  try {
+    SECTIONS.forEach(function (sec) {
+      var pre = sec.shot ? T(sec.title) + " – " : "";
+      sec.qs.forEach(function (q) {
+        var shown = isShown(q);
+        if (q.type === "matrix") {
+          var m = S.a[q.id] || {}, levels = q.labels || q.levels;
+          q.rows.forEach(function (r, ri) {
+            add(sec.shot ? pre + T(r) : join(T(q.q), T(r)), shown ? colRating(m["r" + ri], levels, q.faceset) : "");
+          });
+        } else if (q.type === "scale") {
+          add(T(q.q), shown ? colRating(S.a[q.id], q.levels) : "");
+        } else if (q.type === "single" && q.faces) {
+          var v = S.a[q.id], f = v !== undefined ? q.faces[+v] : null;
+          var e = typeof f === "number" ? COL_FACE[f] : (f === "idk" ? COL_IDK : "");
+          add(pre + T(q.q), shown && v !== undefined ? (e ? e + " " : "") + answerText(q) : "");
+        } else {
+          add(pre + T(q.q), shown ? answerText(q) : "");
+        }
+      });
+    });
+    var yes = S.a.callChoice === "yes";
+    add("Zájem o hovor", yes ? "ano" : (S.a.callChoice === "no" ? "ne" : ""));
+    CALL_QS.forEach(function (q) {
+      add("Hovor – " + T(q.q).replace(/\..*$/, ""), yes ? (q.type === "bool" ? (S.a[q.id] ? "ano" : "") : answerText(q)) : "");
+    });
+  } finally { S.lang = keep; }
+  return out;
+}
+
 // Odoslanie odpovedí cez existujúce napojenie (window.FaviSurveySubmit), ak je na stránke dostupné.
 function submitAnswers() {
   try {
     if (typeof window.FaviSurveySubmit === "function") {
-      window.FaviSurveySubmit({ lang:S.lang, answers:JSON.parse(JSON.stringify(S.a)), text:buildExport() });
+      window.FaviSurveySubmit({ lang:S.lang, answers:JSON.parse(JSON.stringify(S.a)), text:buildExport(), columns:buildColumns() });
     }
   } catch (e) {}
 }
