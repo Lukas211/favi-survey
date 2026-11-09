@@ -1,0 +1,445 @@
+/* favi-survey – Partner dashboard dotazník (favionline.com) */
+/* vietnamese */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/work-sans-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/work-sans-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/work-sans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/work-sans-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/work-sans-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/work-sans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/work-sans-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/work-sans-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/work-sans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/work-sans-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/work-sans-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/work-sans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* FAVI Foundations: Colors + Typography (Work Sans). Svetlá téma = FAVI, tmavá je odvodená. */
+.favi-survey{
+  --bg:#F6F6F6; --surface:#FFFFFF; --ink:#222222; --ink-2:#585858; --muted:#767676;
+  --line:#E8E8E8; --line-soft:#F2F2F2; --aux-bg:#F5F5F5; --field:#E8E8E8; --field-hover:#BFBFBF; --icon-border:#898989;
+  --brand:#A61932; --brand-hover:#7D1527; --brand-press:#650F20; --brand-light:#B43E53; --brand-ink:#FFFFFF;
+  --wash:#FAF4F0; --wash-2:#F3E2E5; --linen:#F3EAD7;
+  --err:#D93B30; --err-bg:#FCF0EF; --ok:#26A65B;
+  --ring:rgba(166,25,50,.12); --ring-strong:rgba(166,25,50,.20);
+  --shadow-xs:0 1px 2px rgba(34,34,34,.06);
+  --shadow-sm:0 1px 3px rgba(34,34,34,.08), 0 1px 2px rgba(34,34,34,.04);
+  --shadow-card:0 2px 10px rgba(34,34,34,.06);
+  --font:"Work Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+.favi-survey /* dotazník je iba v light mode */
+:root{ box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+html{ scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px); }
+.favi-survey *, .favi-survey *::before, .favi-survey *::after{ box-sizing:inherit; }
+.favi-survey [hidden]{ display:none !important; }
+.favi-survey{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 16px/24px var(--font);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.favi-survey::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); background:var(--surface); z-index:30; }
+.favi-survey p{ margin:0 0 12px; }
+
+.favi-survey /* header */
+.top{ position:-webkit-sticky; position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--surface); border-bottom:1px solid var(--line-soft); }
+.favi-survey .top-in{ max-width:720px; margin:0 auto; padding:0 20px; height:56px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.favi-survey .brand{ display:flex; align-items:center; gap:14px; color:var(--brand); }
+.favi-survey .logo{ display:block; height:30px; width:auto; }
+.favi-survey .brand span{ font-weight:400; font-size:14px; line-height:20px; color:var(--muted); }
+.favi-survey .brand-home{ cursor:pointer; border-radius:8px; transition:opacity .15s; }
+.favi-survey .brand-home:hover{ opacity:.8; }
+.favi-survey .brand-home:focus-visible{ outline:2px solid var(--brand-light); outline-offset:4px; }
+.favi-survey /* language dropdown */
+.langsel{ position:relative; }
+.favi-survey .langbtn{
+  display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 10px 0 8px;
+  font:inherit; font-size:14px; line-height:20px; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow-xs); cursor:pointer;
+  transition:border-color .12s, box-shadow .12s;
+}
+.favi-survey .langbtn:hover{ border-color:var(--field-hover); }
+.favi-survey .langbtn:focus-visible{ outline:none; box-shadow:0 0 0 3px var(--ring-strong); border-color:var(--brand); }
+.favi-survey .langbtn .chev{ width:18px; height:18px; color:var(--muted); transition:transform .15s ease; }
+.favi-survey .langbtn[aria-expanded="true"] .chev{ transform:rotate(180deg); }
+.favi-survey .flag{ flex:none; display:inline-flex; width:20px; height:20px; border-radius:50%; overflow:hidden; box-shadow:0 0 0 1px rgba(34,34,34,.10); }
+.favi-survey .flag svg{ display:block; width:100%; height:100%; }
+.favi-survey .langmenu{
+  position:absolute; right:0; top:calc(100% + 8px); z-index:40; min-width:168px; max-height:min(360px,70vh); overflow:auto;
+  margin:0; padding:6px; list-style:none; background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  box-shadow:0 6px 24px rgba(34,34,34,.16);
+}
+.favi-survey .langmenu li{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; font-size:14px; line-height:20px; font-weight:500; cursor:pointer; outline:none; }
+.favi-survey .langmenu li:hover, .favi-survey .langmenu li:focus-visible{ background:var(--wash); }
+.favi-survey .langmenu li[aria-selected="true"]{ background:var(--wash-2); color:var(--brand); }
+.favi-survey .langmenu li.off{ cursor:default; color:var(--muted); }
+.favi-survey .langmenu li.off .flag{ opacity:.55; }
+.favi-survey .langmenu li.off:hover{ background:transparent; }
+.favi-survey .langmenu .soon{ margin-left:auto; font-size:12px; line-height:18px; font-weight:400; color:var(--muted); }
+
+.favi-survey /* layout */
+main{ max-width:720px; margin:0 auto; padding:24px 20px 72px; }
+.favi-survey .card{ background:var(--surface); border:1px solid var(--line-soft); border-radius:16px; box-shadow:var(--shadow-card); padding:36px; }
+
+.favi-survey /* typography: H1 je najťažší (bold 700, .favi-survey 32/40), .favi-survey ostatné nadpisy sú menšie a semibold/medium */
+h1{ font-size:32px; line-height:40px; font-weight:700; letter-spacing:-0.02em; margin:0 0 8px; outline:none; }
+.favi-survey .stepno{ margin:0 0 8px; font-size:14px; line-height:20px; font-weight:500; color:var(--muted); }
+.favi-survey /* segmentovaný progress krokov */
+.segs{ display:grid; grid-template-columns:repeat(9, minmax(0, 1fr)); gap:4px; margin:0 0 22px; }
+.favi-survey .seg{ display:block; height:4px; border-radius:999px; background:var(--line); transition:background-color .2s; }
+.favi-survey .seg.done{ background:var(--brand); }
+.favi-survey .seg.cur{ background:var(--brand); box-shadow:0 0 0 2px var(--surface), 0 0 0 4px var(--ring-strong); }
+.favi-survey .lead{ margin:0 0 8px; color:var(--ink-2); }
+.favi-survey .card.intro{ padding:44px 40px 40px; }
+.favi-survey .card.intro h1{ margin-bottom:12px; }
+.favi-survey .subtitle{ font-size:18px; line-height:28px; font-weight:400; color:var(--ink-2); margin:0 0 28px; max-width:34em; }
+.favi-survey .facts{ list-style:none; margin:0 0 32px; padding:0; display:grid; gap:14px; }
+.favi-survey .facts li{ display:flex; align-items:flex-start; gap:12px; font-size:16px; line-height:24px; font-weight:500; }
+.favi-survey .ck{ flex:none; width:24px; height:24px; border-radius:50%; background:var(--linen); color:var(--brand); display:inline-flex; align-items:center; justify-content:center; }
+.favi-survey .ck svg{ width:14px; height:14px; }
+.favi-survey .card.intro .actions{ margin:0; }
+
+.favi-survey /* questions */
+.qs{ margin-top:16px; }
+.favi-survey .q{ padding:28px 0; border-top:1px solid var(--line-soft); }
+.favi-survey .q.q-bare{ padding:8px 0 4px; border-top:0; }
+.favi-survey /* predel: hlavná otázka → detailné otázky */
+.sec-div{ display:flex; align-items:center; gap:14px; margin:12px 0 24px; }
+.favi-survey .sec-div::before, .favi-survey .sec-div::after{ content:""; flex:1 1 0; min-width:16px; height:1px; background:var(--line); }
+.favi-survey .sec-div span{ flex:0 1 auto; padding:5px 14px; border-radius:999px; background:color-mix(in srgb, var(--brand) 7%, var(--surface));
+  color:var(--brand); font-size:13px; line-height:18px; font-weight:500; text-align:center; }
+.favi-survey .q-bare + .q{ border-top:0; padding-top:20px; }
+.favi-survey .nav.nav-flush{ border-top:0; padding-top:12px; }
+.favi-survey .qt{ font-size:18px; line-height:28px; font-weight:600; margin:0 0 4px; }
+.favi-survey .tag{ margin-left:8px; font-size:14px; line-height:20px; font-weight:400; color:var(--muted); }
+.favi-survey .req{ margin-left:8px; font-size:14px; line-height:20px; font-weight:500; color:var(--err); }
+.favi-survey .chip .req{ margin-left:4px; }
+.favi-survey /* pomocné texty a popisy škál: jemné svetlosivé pozadie */
+.count, .favi-survey .ends > span{ background:var(--aux-bg); border-radius:6px; }
+.favi-survey .hint{ font-size:14px; line-height:20px; color:var(--ink-2); margin:0 0 12px; }
+.favi-survey .qt + .chips, .favi-survey .qt + .ends-wrap, .favi-survey .qt + .field{ margin-top:14px; }
+.favi-survey /* emoji hodnotenie: o niečo väčší odstup od otázky (a pomocného textu) */
+.qt + .ends-wrap, .favi-survey .hint + .ends-wrap{ margin-top:20px; }
+.favi-survey .msg{ display:none; margin:10px 0 0; font-size:14px; line-height:20px; font-weight:500; color:var(--err); }
+.favi-survey .q.err .msg{ display:block; }
+.favi-survey .q.err .qt{ color:var(--err); }
+.favi-survey .hint:empty, .favi-survey .count:empty{ display:none; }
+.favi-survey .count{ width:fit-content; padding:4px 10px; margin:10px 0 0; font-size:14px; line-height:20px; color:var(--ink-2); }
+
+.favi-survey /* answer chips */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.favi-survey .chip{ position:relative; display:block; }
+.favi-survey .chip input{ position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:pointer; }
+.favi-survey .chip span{
+  position:relative; display:flex; align-items:center; gap:10px; min-height:44px; padding:10px 18px;
+  border:1px solid var(--field); border-radius:22px; background:var(--surface); box-shadow:var(--shadow-xs);
+  font-size:16px; line-height:24px; transition:border-color .12s, background-color .12s, box-shadow .12s;
+}
+.favi-survey .chip:hover span{ border-color:var(--field-hover); }
+.favi-survey .chip input:focus-visible + span{ box-shadow:0 0 0 3px var(--ring-strong); }
+.favi-survey .chip input:checked + span{ border-color:var(--brand); background:var(--wash); box-shadow:none; }
+.favi-survey .chip input:disabled{ cursor:not-allowed; }
+.favi-survey .chip input:disabled + span{ opacity:.45; }
+.favi-survey .chip.single span::before{ content:""; flex:none; width:20px; height:20px; border-radius:50%; border:1px solid var(--icon-border); background:var(--surface); }
+.favi-survey .chip.single input:checked + span::before{ border-color:var(--brand); background:radial-gradient(circle, var(--brand) 0 5px, var(--surface) 6px); }
+.favi-survey .chip.multi span::before{ content:""; flex:none; width:20px; height:20px; border-radius:4px; border:1px solid var(--icon-border); background:var(--surface); }
+.favi-survey .chip.multi input:checked + span::before{ border-color:var(--brand); background:var(--brand); }
+.favi-survey .chip.multi input:checked + span::after{
+  content:""; position:absolute; left:25px; top:50%; width:5px; height:9px;
+  border:solid var(--brand-ink); border-width:0 2px 2px 0; transform:translateY(-64%) rotate(45deg);
+}
+.favi-survey /* numeric scale with faces: full row width */
+.chips.nums{ flex-wrap:nowrap; }
+.favi-survey .chips.nums .chip{ flex:1 1 0; min-width:0; }
+.favi-survey /* hodnotenie 1–5: štvorcové karty (emoji hore, .favi-survey popis pod ním) */
+.chips.nums{ gap:10px; }
+.favi-survey .chip.num span{
+  position:relative; flex-direction:column; justify-content:flex-start; align-items:center; gap:16px; height:100%; min-height:120px;
+  padding:22px 6px 16px; border:1px solid transparent; border-radius:14px; background:#FAF4F0; box-shadow:none; text-align:center;
+}
+.favi-survey .chip.num:hover span{ border-color:#E6DCD4; background:#FAF4F0; }
+.favi-survey .chip.num input:checked + span{ border-color:var(--brand); background:#FAF4F0; box-shadow:inset 0 0 0 1px var(--brand); }
+.favi-survey .chip.num input:focus-visible + span{ box-shadow:0 0 0 3px var(--ring-strong); }
+.favi-survey .chip.num input:checked:focus-visible + span{ box-shadow:inset 0 0 0 1px var(--brand), 0 0 0 3px var(--ring-strong); }
+.favi-survey .chip.num .tick{
+  position:absolute; top:8px; right:8px; display:none; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+  background:var(--brand); color:var(--brand-ink);
+}
+.favi-survey .chip.num .tick svg{ width:12px; height:12px; }
+.favi-survey .chip.num input:checked + span .tick{ display:flex; }
+.favi-survey .chip.num .lvl{ display:block; width:100%; font-style:normal; font-size:13px; line-height:17px; font-weight:500; color:var(--ink-2); text-align:center; overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
+.favi-survey .chip.num input:checked + span .lvl{ color:var(--brand); font-weight:600; }
+.favi-survey .face{ display:block; flex:none; width:36px; height:36px; user-select:none; -webkit-user-drag:none; }
+.favi-survey .chip .ico{ color:var(--muted); transition:color .12s; }
+.favi-survey .chip input:checked + span .ico{ color:var(--brand); }
+.favi-survey .ends{ display:flex; justify-content:space-between; gap:12px; margin-top:8px; font-size:14px; line-height:20px; color:var(--ink-2); }
+.favi-survey .ends-wrap{ margin-bottom:4px; }
+.favi-survey .ends-wrap + .chips{ margin-top:12px; }
+.favi-survey .ends > span:last-child:not(:first-child){ text-align:right; }
+.favi-survey .ends.legend{ flex-wrap:wrap; justify-content:flex-start; gap:2px 18px; }
+.favi-survey .ends > span{ padding:2px 8px; }
+.favi-survey .chip.pill span{ min-height:40px; padding:7px 14px; font-size:14px; line-height:20px; }
+.favi-survey .other{ margin-top:12px; }
+
+.favi-survey /* rating box: scale legend on top, .favi-survey rows below */
+.mx{ margin-top:14px; }
+.favi-survey .q-bare .mx{ margin-top:0; }
+.favi-survey .mx .ends-wrap{ margin:0; padding:12px 16px; background:var(--aux-bg); border-bottom:1px solid var(--line-soft); }
+.favi-survey .mx .ends > span{ padding:0; background:none; border-radius:0; }
+.favi-survey .mx .mrow{ margin:0; padding:0 0 32px; }
+.favi-survey .mx .mrow:last-child{ padding-bottom:0; }
+.favi-survey .rl{ font-size:16px; line-height:24px; font-weight:500; margin:0 0 14px; }
+.favi-survey .hint + .mx{ margin-top:12px; }
+
+.favi-survey /* fields: moderné, .favi-survey jemný okraj + tieň */
+.field{
+  display:block; width:100%; min-height:48px; font:inherit; font-size:16px; line-height:24px;
+  padding:11px 14px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--field); border-radius:10px; box-shadow:var(--shadow-sm);
+  transition:border-color .12s, box-shadow .12s;
+}
+.favi-survey .field::placeholder{ color:var(--muted); }
+.favi-survey .field:hover{ border-color:var(--field-hover); }
+.favi-survey textarea.field{ min-height:104px; resize:vertical; padding:12px 14px; }
+.favi-survey .field:focus{ outline:none; border-color:var(--brand); box-shadow:0 0 0 3px var(--ring); }
+.favi-survey .q.err .field{ border-color:var(--err); }
+
+.favi-survey /* buttons: FAVI pill s ikonami šípok */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; height:48px; padding:0 26px;
+  font:inherit; font-size:16px; line-height:24px; font-weight:500; text-decoration:none; white-space:nowrap; cursor:pointer;
+  border:0; border-radius:999px; transition:background-color .12s, transform .12s, box-shadow .12s;
+}
+.favi-survey .btn:focus-visible{ outline:2px solid var(--brand-light); outline-offset:2px; }
+.favi-survey .btn:active{ transform:scale(.97); }
+.favi-survey .ico{ flex:none; width:20px; height:20px; transition:transform .15s ease; }
+.favi-survey .btn-primary{ background:var(--brand); color:var(--brand-ink); box-shadow:var(--shadow-sm); }
+.favi-survey .btn-primary:hover{ background:var(--brand-hover); }
+.favi-survey .btn-primary:active{ background:var(--brand-press); }
+.favi-survey .btn-primary, .favi-survey .btn-primary:hover, .favi-survey .btn-primary:focus-visible, .favi-survey .btn-primary:active{ color:var(--brand-ink); }
+.favi-survey .btn-primary:hover .ico-r{ transform:translateX(3px); }
+.favi-survey .btn-ghost{ background:var(--surface); color:var(--brand); box-shadow:inset 0 0 0 1px var(--brand); }
+.favi-survey .btn-ghost:hover{ background:var(--wash); }
+.favi-survey .btn-ghost:active{ background:var(--wash-2); }
+.favi-survey .btn-ghost:hover .ico-l{ transform:translateX(-3px); }
+.favi-survey .btn:disabled, .favi-survey .btn[aria-disabled="true"]{ opacity:.5; cursor:not-allowed; transform:none; }
+.favi-survey .btn-primary:disabled:hover, .favi-survey .btn-primary[aria-disabled="true"]:hover{ background:var(--brand); }
+.favi-survey .nav{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:8px; padding-top:24px; border-top:1px solid var(--line-soft); }
+.favi-survey .nav.solo{ justify-content:flex-start; }
+.favi-survey .actions{ display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 8px; }
+
+.favi-survey /* call ask */
+.ask{ margin:16px 0 4px; padding:0; }
+.favi-survey .ask p{ font-size:16px; line-height:24px; }
+.favi-survey .choice{ margin-top:12px; }
+.favi-survey .opts{ display:grid; gap:4px; }
+.favi-survey .qt + .opts{ margin-top:10px; }
+.favi-survey /* odpovede s výberom (checkbox / radio): mriežka s dvoma rovnako širokými stĺpcami */
+.grid2{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; align-items:stretch; }
+.favi-survey .opts.grid2{ gap:4px 16px; }
+.favi-survey .grid2 > .chip, .favi-survey .grid2 > .radio{ min-width:0; }
+.favi-survey .grid2 > .chip > span{ height:100%; overflow-wrap:break-word; }
+.favi-survey .grid2 > .radio .txt{ min-width:0; overflow-wrap:break-word; }
+.favi-survey .grid2.grid1{ grid-template-columns:minmax(0, 1fr); }
+@media (max-width:359px){ .favi-survey .grid2{ grid-template-columns:minmax(0, 1fr); } }
+.favi-survey .radio, .favi-survey .check{ position:relative; display:flex; align-items:center; gap:12px; padding:8px 0; cursor:pointer; font-size:16px; line-height:24px; }
+.favi-survey .check{ align-items:flex-start; }
+.favi-survey .radio input, .favi-survey .check input{ position:absolute; opacity:0; width:0; height:0; }
+.favi-survey .radio .dot{ flex:none; width:20px; height:20px; border-radius:50%; border:1px solid var(--icon-border); background:var(--surface); display:inline-flex; align-items:center; justify-content:center; transition:border-color .12s; }
+.favi-survey .radio .dot::after{ content:""; width:10px; height:10px; border-radius:50%; background:var(--brand); transform:scale(0); transition:transform .12s; }
+.favi-survey .radio input:checked + .dot{ border-color:var(--brand); }
+.favi-survey .radio input:checked + .dot::after{ transform:scale(1); }
+.favi-survey .radio:hover .dot, .favi-survey .check:hover .box{ border-color:var(--brand-light); }
+.favi-survey .radio input:focus-visible + .dot, .favi-survey .check input:focus-visible + .box{ box-shadow:0 0 0 3px var(--ring-strong); }
+.favi-survey .emo{ flex:none; display:block; width:24px; height:24px; user-select:none; }
+.favi-survey .emo-gap{ visibility:hidden; }
+.favi-survey .emo.emo-in{ display:inline-block; width:18px; height:18px; margin-left:6px; vertical-align:-3px; }
+.favi-survey .check .box{ position:relative; flex:none; width:20px; height:20px; margin-top:2px; border-radius:4px; border:1px solid var(--icon-border); background:var(--surface); transition:background-color .12s, border-color .12s; }
+.favi-survey .check input:checked + .box{ background:var(--brand); border-color:var(--brand); }
+.favi-survey .check input:checked + .box::after{ content:""; position:absolute; left:6px; top:2px; width:5px; height:10px; border:solid var(--brand-ink); border-width:0 2px 2px 0; transform:rotate(45deg); }
+.favi-survey .q.err .check .box{ border-color:var(--err); }
+.favi-survey .check .req{ margin-left:6px; white-space:nowrap; }
+.favi-survey .thanks{ margin:14px 0 0; font-weight:500; }
+.favi-survey .ask .msg{ margin-top:12px; }
+
+.favi-survey /* done */
+.label{ font-size:14px; line-height:20px; font-weight:600; margin:24px 0 8px; }
+
+.favi-survey /* thanks page */
+.card.thanks{ padding:20px 20px 36px; }
+.favi-survey .hero{ position:relative; display:flex; align-items:center; justify-content:center; height:220px; margin:0 0 28px; border-radius:16px; overflow:hidden;
+  background:radial-gradient(circle at 50% 42%, var(--brand-light) 0, var(--brand) 64%); }
+.favi-survey .cf{ position:absolute; display:block; opacity:.95; }
+.favi-survey .hero-badge{ position:relative; display:flex; align-items:center; justify-content:center; width:116px; height:116px; border-radius:50%; background:var(--wash); box-shadow:0 8px 24px rgba(34,34,34,.22);
+  animation:pop .5s cubic-bezier(.2,.9,.3,1.3) both; }
+.favi-survey .hero-badge img{ width:68px; height:68px; display:block; user-select:none; }
+@keyframes pop{ 0%{ transform:scale(.4); opacity:0; } 60%{ transform:scale(1.1); opacity:1; } 100%{ transform:scale(1); } }
+.favi-survey .thanks-in{ padding:0 12px; }
+.favi-survey .thanks-in h1{ margin-bottom:6px; }
+.favi-survey .thanks-home{ margin:32px 0 0; }
+.favi-survey .by{ margin:0 0 4px; color:var(--ink-2); }
+.favi-survey .by strong{ font-weight:600; color:var(--ink); }
+.favi-survey .note-line{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; margin:16px 0 0; font-size:14px; line-height:20px; color:var(--ink-2); }
+.favi-survey .note-line .btn{ height:36px; padding:0 16px; font-size:14px; }
+.favi-survey .sec-t{ font-size:18px; line-height:28px; font-weight:600; margin:32px 0 12px; }
+.favi-survey .kv{ border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-xs); }
+.favi-survey .kvr{ display:flex; gap:16px; padding:12px 16px; }
+.favi-survey .kvr + .kvr{ border-top:1px solid var(--line-soft); }
+.favi-survey .kvr .k{ flex:0 0 150px; font-size:14px; line-height:24px; color:var(--ink-2); }
+.favi-survey .kvr .v{ flex:1; min-width:0; overflow-wrap:anywhere; font-size:16px; line-height:24px; }
+.favi-survey .next-line{ margin:0; font-size:16px; line-height:24px; color:var(--ink); }
+
+.favi-survey /* screenshot slot + lightbox */
+.shot{ margin:18px 0 6px; }
+.favi-survey .shot-btn{ display:block; width:100%; padding:0; border:1px solid var(--line); border-radius:12px; background:var(--bg); cursor:zoom-in; overflow:hidden; box-shadow:var(--shadow-xs); }
+.favi-survey .shot-btn:focus-visible{ outline:2px solid var(--brand-light); outline-offset:2px; }
+.favi-survey .shot img{ display:block; width:100%; height:auto; }
+.favi-survey .shot figcaption{ margin-top:8px; font-size:14px; line-height:20px; color:var(--ink-2); }
+.favi-survey .shot.ph{ display:flex; align-items:center; justify-content:center; min-height:220px; padding:24px; text-align:center; color:var(--ink-2); background:var(--wash); border:1.5px dashed var(--field-hover); border-radius:12px; }
+.favi-survey .lb{ position:fixed; inset:0; z-index:50; display:flex; justify-content:center; align-items:flex-start; padding:56px 12px 24px; overflow:auto; background:rgba(20,17,18,.88); cursor:zoom-out; }
+.favi-survey .lb img{ width:min(1400px,100%); height:auto; background:#fff; border-radius:12px; }
+.favi-survey .lb button{ position:fixed; top:calc(env(safe-area-inset-top,0px) + 10px); right:14px; height:36px; padding:0 18px; font:inherit; font-size:14px; line-height:20px; color:#222; background:#fff; border:0; border-radius:999px; cursor:pointer; }
+
+
+.favi-survey /* sticky header: wrappers must grow with content */
+html, .favi-survey, .favi-survey body > div, .favi-survey .sc-host{ height:auto !important; min-height:100%; overflow:visible !important; }
+
+.favi-survey /* scroll to top */
+.totop{ position:fixed; z-index:25; right:calc(env(safe-area-inset-right,0px) + 24px); bottom:calc(env(safe-area-inset-bottom,0px) + 24px);
+  display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; padding:0; border:0; border-radius:50%;
+  background:var(--brand); color:var(--brand-ink); box-shadow:var(--shadow-sm), 0 6px 18px rgba(34,34,34,.16); cursor:pointer;
+  opacity:0; visibility:hidden; transform:translateY(8px); pointer-events:none;
+  transition:opacity .18s ease-out, transform .18s ease-out, visibility 0s linear .18s, background-color .12s; }
+.favi-survey .totop.on{ opacity:1; visibility:visible; transform:none; pointer-events:auto; transition:opacity .18s ease-out, transform .18s ease-out, visibility 0s, background-color .12s; }
+.favi-survey .totop:hover{ background:var(--brand-hover); }
+.favi-survey .totop:active{ background:var(--brand-press); transform:scale(.97); }
+.favi-survey .totop:focus-visible{ outline:2px solid var(--brand-light); outline-offset:2px; }
+.favi-survey .totop .ico{ width:22px; height:22px; }
+.favi-survey .totop:hover .ico{ transform:translateY(-2px); }
+
+@media (max-width:560px){
+  .favi-survey .totop{ right:calc(env(safe-area-inset-right,0px) + 16px); bottom:calc(env(safe-area-inset-bottom,0px) + 16px); }
+  .favi-survey .top-in{ padding:0 16px; }
+  .favi-survey main{ padding:0 0 48px; }
+  .favi-survey .card{ border-radius:0; border-left:0; border-right:0; box-shadow:none; padding:24px 16px; }
+  .favi-survey h1{ font-size:28px; line-height:36px; }
+  .favi-survey .card.intro{ padding:32px 16px 28px; }
+  .favi-survey .card.thanks{ padding:16px 16px 28px; }
+  .favi-survey .hero{ height:190px; }
+  .favi-survey .thanks-in{ padding:0; }
+  .favi-survey .kvr{ flex-direction:column; gap:2px; }
+  .favi-survey .kvr .k{ flex:none; }
+  .favi-survey .subtitle{ font-size:16px; line-height:24px; }
+  .favi-survey .brand span{ display:none; }
+  .favi-survey .qt{ font-size:17px; line-height:26px; }
+  .favi-survey .btn{ padding:0 20px; }
+  .favi-survey .chips.nums{ gap:6px; }
+  .favi-survey .chip.num span{ min-height:96px; padding:14px 2px 10px; gap:10px; border-radius:12px; }
+  .favi-survey .chip.num .face{ width:30px; height:30px; }
+  .favi-survey .chip.num .tick{ top:-6px; right:-6px; width:18px; height:18px; box-shadow:0 0 0 2px var(--surface); }
+  .favi-survey .chip.num .tick svg{ width:11px; height:11px; }
+  .favi-survey .chip.num .lvl{ font-size:11px; line-height:14px; letter-spacing:-0.1px; -webkit-hyphens:auto; hyphens:auto; }
+  .favi-survey .grid2 > .chip > span{ padding:10px 14px; gap:8px; }
+}
+@media (prefers-reduced-motion:reduce){ .favi-survey *{ transition:none !important; animation:none !important; } }
+
+.favi-survey a:not(.btn){ color:var(--brand); } .favi-survey a:not(.btn):hover{ color:var(--brand-hover); }
+/* --- doplněno pro vložení do Webflow --- */
+.favi-survey{ min-height:100vh; text-align:left; }
+.favi-survey *, .favi-survey *::before, .favi-survey *::after{ box-sizing:border-box; }
+.favi-survey h1, .favi-survey h2, .favi-survey h3{ font-family:var(--font); }
+.favi-survey button, .favi-survey input, .favi-survey textarea{ font-family:inherit; }
