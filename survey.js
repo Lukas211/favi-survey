@@ -21,6 +21,8 @@ var SCRIPT_BASE = (function () {
   var s = document.currentScript && document.currentScript.src;
   return s ? s.replace(/[^\/]*$/, "") : "";
 })();
+// Verze dotazníku = tag v adrese skriptu (…/favi-survey@v3/survey.js → "v3")
+var SURVEY_VERSION = CFG.version || ((SCRIPT_BASE.match(/@(v[\w.\-]+)\//) || [])[1]) || "dev";
 if (CFG.imgOld === undefined && CFG.useRepoImages) CFG.imgOld = SCRIPT_BASE + "img/old-dashboard.png";
 if (CFG.imgNew === undefined && CFG.useRepoImages) CFG.imgNew = SCRIPT_BASE + "img/new-dashboard.png";
 
@@ -52,6 +54,7 @@ function sendWithRetry(body, tries) {
 window.FaviSurveySubmit = function (payload) {
   var body = JSON.stringify({
     lang: payload.lang,
+    version: SURVEY_VERSION,
     answers: payload.answers,
     text: payload.text,
     columns: payload.columns || [],
